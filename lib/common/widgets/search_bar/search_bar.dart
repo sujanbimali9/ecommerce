@@ -11,7 +11,7 @@ class TAppSearchBar extends StatelessWidget {
         width: 500,
         child: TextField(
           decoration: InputDecoration(
-              prefixIcon: Icon(Iconsax.search_favorite),
+              prefixIcon: const Icon(Iconsax.search_favorite),
               fillColor: TColors.white,
               filled: true,
               enabledBorder:

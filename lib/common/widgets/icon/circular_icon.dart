@@ -24,7 +24,7 @@ class TCircularIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TCircularContainer(
+    return TRoundedContainer(
         height: height,
         width: width,
         radius: radius,

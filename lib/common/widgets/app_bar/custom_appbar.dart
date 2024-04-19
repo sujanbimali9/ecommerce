@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class TAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
   final List<Widget>? actions;
   final bool showBackArrow;
   final IconData? leadingIcon;
   final VoidCallback? leadingOnPressed;
 
-  const CustomAppBar(
+  const TAppBar(
       {super.key,
       this.title,
       this.actions,

@@ -1,6 +1,7 @@
+import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class TCircularContainer extends StatelessWidget {
+class TRoundedContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsets? padding;
@@ -9,8 +10,9 @@ class TCircularContainer extends StatelessWidget {
   final Widget? child;
   final EdgeInsets? margin;
   final VoidCallback? onPressed;
+  final bool showBorder;
 
-  const TCircularContainer(
+  const TRoundedContainer(
       {super.key,
       this.height,
       this.width,
@@ -19,7 +21,8 @@ class TCircularContainer extends StatelessWidget {
       this.radius = 0,
       this.margin,
       this.child,
-      this.onPressed});
+      this.onPressed,
+      this.showBorder = false});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,10 +33,9 @@ class TCircularContainer extends StatelessWidget {
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
+          border: showBorder ? Border.all(color: TColors.grey) : null,
           color: backgroundColor,
-          borderRadius: BorderRadius.all(
-            Radius.circular(radius),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(radius)),
         ),
         child: child,
       ),

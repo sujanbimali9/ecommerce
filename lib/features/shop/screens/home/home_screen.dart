@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_flutter/common/widgets/product_card/vertical_product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,10 +25,12 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const THomeAppBar(),
-                  const SizedBox(
-                    height: TSizes.spaceBtwSections,
+                  const SizedBox(height: TSizes.spaceBtwInputFields),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: TSizes.md, vertical: TSizes.xs),
+                    child: TSearchContainer(),
                   ),
-                  const TSearchContainer(),
                   THomeCategories(
                     onPressed: () {},
                     title: const [
@@ -69,6 +72,7 @@ class HomeScreen extends StatelessWidget {
                   TGridLayout(
                     itemCount: 10,
                     itemBuilder: (context, index) => const TVerticalProductCard(
+                      width: double.infinity,
                       image: TImages.productImage1,
                       discountPercentage: '20%',
                     ),
@@ -79,37 +83,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TGridLayout extends StatelessWidget {
-  const TGridLayout({
-    super.key,
-    this.mainAxisExtents,
-    required this.itemBuilder,
-    required this.itemCount,
-    this.crossAxisCount,
-  });
-  final double? mainAxisExtents;
-  final Widget? Function(BuildContext context, int index) itemBuilder;
-  final int itemCount;
-  final int? crossAxisCount;
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      itemCount: itemCount,
-      padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: crossAxisCount ?? 2,
-        mainAxisExtent: mainAxisExtents ?? 310,
-        mainAxisSpacing: TSizes.gridViewSpacing,
-        crossAxisSpacing: TSizes.gridViewSpacing,
-      ),
-      itemBuilder: itemBuilder,
     );
   }
 }

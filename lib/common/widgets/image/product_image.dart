@@ -1,7 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
 import 'package:ecommerce_flutter/common/widgets/custom_shapes/container/circle_container.dart';
 import 'package:ecommerce_flutter/common/widgets/icon/circular_icon.dart';
 import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
@@ -37,13 +35,14 @@ class TProductImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool dark = THelperFunctions.isDarkMode(context);
 
-    return TCircularContainer(
+    return TRoundedContainer(
       height: height,
       width: width,
       radius: TSizes.productImageRadius,
       padding: EdgeInsets.all(padding ?? 0),
       backgroundColor: dark ? TColors.dark : TColors.light,
       child: Stack(
+        alignment: Alignment.center,
         children: [
           TRoundedImage(
             image: image,
@@ -53,7 +52,7 @@ class TProductImage extends StatelessWidget {
             Positioned(
               top: 8,
               left: 8,
-              child: TCircularContainer(
+              child: TRoundedContainer(
                 backgroundColor: TColors.secondary.withOpacity(0.8),
                 radius: TSizes.borderRadiusLg,
                 padding: const EdgeInsets.symmetric(

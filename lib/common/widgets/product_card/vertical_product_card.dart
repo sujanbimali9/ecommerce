@@ -3,7 +3,6 @@ import 'package:ecommerce_flutter/common/widgets/cart/add_to_cart_button.dart';
 import 'package:ecommerce_flutter/common/widgets/image/product_image.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/produt_title_price.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -42,9 +41,9 @@ class TVerticalProductCard extends StatelessWidget {
       child: Column(
         children: [
           TProductImage(
-            image: TImages.productImage1,
+            image: image,
             discoutPercentage: discountPercentage,
-            height: height,
+            height: height ?? 180,
             icon: icon,
             iconColor: iconColor,
             isNetworkImage: isNetworkImage,
@@ -57,7 +56,7 @@ class TVerticalProductCard extends StatelessWidget {
           ),
           const ProductTitleAndPrice(
             title: 'Green Nike Air Shoe',
-            price: '35',
+            price: '\$35',
             shop: 'Nike',
             isverified: true,
           ),

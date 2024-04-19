@@ -61,7 +61,7 @@ class TSliderIndicator extends StatelessWidget {
           (index) => Obx(
                 () => GestureDetector(
                   onTap: () => controller.onDotClick(index),
-                  child: TCircularContainer(
+                  child: TRoundedContainer(
                     height: controller.currentIndex.value == index ? 4 : 3,
                     width: controller.currentIndex.value == index ? 20 : 10,
                     radius: 10,

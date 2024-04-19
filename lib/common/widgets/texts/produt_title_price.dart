@@ -1,8 +1,7 @@
+import 'package:ecommerce_flutter/common/widgets/image_text_widget/brand_title_text_with_verifyicon.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/product_text.dart';
-import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductTitleAndPrice extends StatelessWidget {
   const ProductTitleAndPrice({
@@ -24,24 +23,10 @@ class ProductTitleAndPrice extends StatelessWidget {
         children: [
           TProductTitleText(text: title, smallText: true),
           const SizedBox(height: TSizes.spaceBtwItems / 2),
+          TBrandTitleTextWithVerifyIcon(text: shop, isverified: isverified),
           Row(
             children: [
-              Text(shop,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  style: Theme.of(context).textTheme.labelMedium),
-              const SizedBox(width: TSizes.sm),
-              if (isverified)
-                const Icon(
-                  Iconsax.verify5,
-                  color: TColors.primary,
-                  size: TSizes.iconXs,
-                )
-            ],
-          ),
-          Row(
-            children: [
-              Text('\$$price',
+              Text(price,
                   overflow: TextOverflow.ellipsis,
                   maxLines: 1,
                   style: Theme.of(context).textTheme.headlineMedium),

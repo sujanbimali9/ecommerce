@@ -32,7 +32,7 @@ class AddToCartButton extends StatelessWidget {
 
     return Align(
       alignment: Alignment.center,
-      child: TCircularContainer(
+      child: TRoundedContainer(
         height: height,
         onPressed: onPressed,
         width: width,

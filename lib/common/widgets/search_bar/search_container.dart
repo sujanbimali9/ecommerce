@@ -10,10 +10,14 @@ class TSearchContainer extends StatelessWidget {
     this.showBorder = true,
     this.icon = Iconsax.search_normal,
     this.showBackgroundColor = true,
+    this.hint,
+    this.padding = const EdgeInsets.all(TSizes.md),
   }) : super(key: key);
   // final VoidCallback onTap;
+  final String? hint;
   final bool showBackgroundColor, showBorder;
   final IconData icon;
+  final EdgeInsets padding;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +25,8 @@ class TSearchContainer extends StatelessWidget {
     return GestureDetector(
       // onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(TSizes.defaultSpace),
-        padding: const EdgeInsets.all(TSizes.md),
+        // margin: const EdgeInsets.all(TSizes.defaultSpace),
+        padding: padding,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(
             Radius.circular(TSizes.cardRadiusLg),
@@ -41,7 +45,7 @@ class TSearchContainer extends StatelessWidget {
               color: TColors.darkGrey,
             ),
             const SizedBox(width: TSizes.spaceBtwItems),
-            Text('Search in Store',
+            Text(hint ?? 'Search in Store',
                 style: Theme.of(context).textTheme.bodySmall)
           ],
         ),

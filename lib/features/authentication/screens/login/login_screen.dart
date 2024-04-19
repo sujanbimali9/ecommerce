@@ -17,15 +17,17 @@ class LoginScreen extends StatelessWidget {
     return const Scaffold(
       body: Padding(
         padding: EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            TLoginHeader(),
-            TLoginForm(),
-            TFormDivider(dividerText: TTexts.orSignInWith),
-            SizedBox(height: TSizes.spaceBtwItems / 2),
-            TSocialButton()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              TLoginHeader(),
+              TLoginForm(),
+              TFormDivider(dividerText: TTexts.orSignInWith),
+              SizedBox(height: TSizes.spaceBtwItems / 2),
+              TSocialButton()
+            ],
+          ),
         ),
       ),
     );

@@ -12,7 +12,7 @@ class TRoundedImage extends StatelessWidget {
     this.boxFit,
     this.isNetworkImage = false,
     this.applyImageRadius = true,
-    required this.onPressed,
+    this.onPressed,
   });
 
   final double? width, height;
@@ -22,7 +22,7 @@ class TRoundedImage extends StatelessWidget {
   final BoxFit? boxFit;
   final bool isNetworkImage;
   final bool applyImageRadius;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {

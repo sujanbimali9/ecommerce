@@ -1,20 +1,23 @@
 import 'package:ecommerce_flutter/common/widgets/image_text_widget/vertical_image_text.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class THomeCategories extends StatelessWidget {
   final VoidCallback onPressed;
+  final List<String> categories;
+  final List<String> title;
 
   const THomeCategories({
     super.key,
     required this.onPressed,
+    required this.categories,
+    required this.title,
   });
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0),
+      padding: const EdgeInsets.only(left: TSizes.defaultSpace),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,14 +29,14 @@ class THomeCategories extends StatelessWidget {
             height: TSizes.spaceBtwItems,
           ),
           SizedBox(
-            height: 200,
+            height: 130,
             child: ListView.builder(
-              itemCount: 6,
+              itemCount: categories.length,
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => VerticalImageText(
-                image: TImages.shoeIcon,
-                title: '',
+                image: categories[index],
+                title: title[index],
                 onPressed: () {},
               ),
             ),

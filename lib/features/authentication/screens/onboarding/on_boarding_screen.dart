@@ -45,7 +45,9 @@ class OnBoardingScreen extends StatelessWidget {
                 )
               ],
             ),
-            const OnBardingSkipButton(),
+            Obx(() => controller.currentPageIndex.value != 2
+                ? const OnBoardingSkipButton()
+                : const SizedBox()),
             const OnBoardingNextButton(),
             const OnBoardingDotNavigation()
           ],

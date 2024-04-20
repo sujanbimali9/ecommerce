@@ -6,6 +6,7 @@ import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class TVerticalProductCard extends StatelessWidget {
   const TVerticalProductCard(
@@ -43,7 +44,7 @@ class TVerticalProductCard extends StatelessWidget {
           TProductImage(
             image: image,
             discoutPercentage: discountPercentage,
-            height: height ?? 180,
+            height: height ?? 160,
             icon: icon,
             iconColor: iconColor,
             isNetworkImage: isNetworkImage,
@@ -54,18 +55,22 @@ class TVerticalProductCard extends StatelessWidget {
           const SizedBox(
             height: TSizes.spaceBtwItems / 2,
           ),
+          const Spacer(),
           const ProductTitleAndPrice(
             title: 'Green Nike Air Shoe',
             price: '\$35',
             shop: 'Nike',
             isverified: true,
           ),
-          const AddToCartButton(
-            width: 150,
+          const Spacer(),
+          const Padding(
+            padding: EdgeInsets.only(left: 3, right: 3, bottom: 3, top: 2),
+            child: AddToCartButton(
+              width: 150,
+              // height: double.infinity,
+              borderRadius: TSizes.md,
+            ),
           ),
-          const SizedBox(
-            height: TSizes.spaceBtwItems / 2,
-          )
         ],
       ),
     );

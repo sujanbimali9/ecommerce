@@ -46,6 +46,7 @@ class TProductImage extends StatelessWidget {
         children: [
           TRoundedImage(
             image: image,
+            width: double.infinity,
             isNetworkImage: isNetworkImage ?? false,
           ),
           if (discoutPercentage != null)

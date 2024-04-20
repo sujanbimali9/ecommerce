@@ -12,8 +12,8 @@ class OnBoardingNextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return Positioned(
-      bottom: 20,
-      right: 20,
+      bottom: 0,
+      right: 0,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             shape: const CircleBorder(

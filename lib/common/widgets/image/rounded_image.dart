@@ -36,7 +36,7 @@ class TRoundedImage extends StatelessWidget {
             image: isNetworkImage
                 ? NetworkImage(image)
                 : AssetImage(image) as ImageProvider,
-            fit: boxFit ?? BoxFit.cover,
+            fit: boxFit ?? BoxFit.contain,
           )),
     );
   }

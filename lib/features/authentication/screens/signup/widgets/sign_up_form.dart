@@ -4,7 +4,6 @@ import 'package:ecommerce_flutter/features/authentication/screens/signup/widgets
 import 'package:ecommerce_flutter/features/authentication/screens/signup/widgets/sign_up_textfield.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/constants/text_strings.dart';
-import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -16,7 +15,6 @@ class TSignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     final controller = SignUpController.instance;
 
     return Form(
@@ -73,7 +71,7 @@ class TSignUpForm extends StatelessWidget {
                 label: TTexts.password,
                 icon: Iconsax.password_check),
             const SizedBox(height: TSizes.spaceBtwItems),
-            TermsAndConnditions(dark: dark),
+            const TermsAndConnditions(),
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),

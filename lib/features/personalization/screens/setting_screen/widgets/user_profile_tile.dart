@@ -1,7 +1,9 @@
 import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
+import 'package:ecommerce_flutter/features/personalization/screens/profile/profile_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class UserProfileTile extends StatelessWidget {
@@ -17,7 +19,9 @@ class UserProfileTile extends StatelessWidget {
         height: 50,
         width: 50,
       ),
-      trailing: IconButton(onPressed: () {}, icon: const Icon(Iconsax.edit)),
+      trailing: IconButton(
+          onPressed: () => Get.to(() => const ProfileScreen()),
+          icon: const Icon(Iconsax.edit)),
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

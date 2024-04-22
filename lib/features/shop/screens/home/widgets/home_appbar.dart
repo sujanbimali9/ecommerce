@@ -34,10 +34,9 @@ class THomeAppBar extends StatelessWidget {
           )
         ],
       ),
-      actions: [
+      actions: const [
         TCartCountIcon(
           text: '5',
-          iconColor: dark ? TColors.black : TColors.white,
         )
       ],
     );

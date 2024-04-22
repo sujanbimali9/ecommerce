@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter/features/personalization/screens/profile/profile_screen.dart';
+import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/setting_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/favourite/wishlist_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/home_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/shop/shop_screen.dart';
@@ -43,6 +43,6 @@ class NavigatorMenuControler extends GetxController {
     HomeScreen(),
     ShopScreen(),
     WishlistScreen(),
-    ProfileScreen(),
+    SettingScreen(),
   ];
 }

@@ -32,14 +32,14 @@ class TCartCountIcon extends StatelessWidget {
               height: 18,
               width: 18,
               decoration: BoxDecoration(
-                color: iconColor ?? (dark ? TColors.light : TColors.black),
+                color: iconColor ?? (dark ? TColors.dark : TColors.light),
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
               ),
               child: Center(
                 child: Text(text,
                     style: Theme.of(context).textTheme.bodySmall!.apply(
                         fontSizeFactor: 0.8,
-                        color: (dark ? TColors.black : TColors.white))),
+                        color: (dark ? TColors.white : TColors.black))),
               ),
             ))
       ],

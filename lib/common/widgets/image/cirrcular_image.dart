@@ -7,22 +7,33 @@ class TCircularImage extends StatelessWidget {
     super.key,
     this.isNewtowkImage = false,
     required this.image,
+    this.height,
+    this.width,
+    this.borderRadius,
+    this.fit,
+    this.overlayColor,
   });
   final bool isNewtowkImage;
   final String image;
-
+  final double? height, width, borderRadius;
+  final BoxFit? fit;
+  final Color? overlayColor;
   @override
   Widget build(BuildContext context) {
     final bool dark = THelperFunctions.isDarkMode(context);
 
-    return SizedBox(
-      height: 46,
-      width: 46,
+    return Container(
+      decoration: BoxDecoration(
+          color: dark ? TColors.black : TColors.white,
+          borderRadius: BorderRadius.all(Radius.circular(borderRadius ?? 50))),
+      height: height ?? 46,
+      width: width ?? 46,
       child: Image(
         image: isNewtowkImage
             ? NetworkImage(image)
             : AssetImage(image) as ImageProvider,
-        color: dark ? TColors.white : TColors.black,
+        fit: fit ?? BoxFit.contain,
+        color: overlayColor,
       ),
     );
   }

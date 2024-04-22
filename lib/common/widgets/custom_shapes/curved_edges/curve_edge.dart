@@ -12,10 +12,12 @@ class TCustomCurveEdges extends CustomClipper<Path> {
     path.quadraticBezierTo(
         firstCurve.dx, firstCurve.dy, secondCurve.dx, secondCurve.dy);
 
-    final secondfFirstCurve = Offset(30, size.height - 20);
-    final secondSecondCurve = Offset(size.width - 30, size.height - 20);
-    path.quadraticBezierTo(secondfFirstCurve.dx, secondfFirstCurve.dy,
-        secondSecondCurve.dx, secondSecondCurve.dy);
+    path.lineTo(size.width - 30, size.height - 20);
+
+    // final secondfFirstCurve = Offset(30, size.height - 20);
+    // final secondSecondCurve = Offset(size.width - 30, size.height - 20);
+    // path.quadraticBezierTo(secondfFirstCurve.dx, secondfFirstCurve.dy,
+    //     secondSecondCurve.dx, secondSecondCurve.dy);
 
     final thirdFirstCurve = Offset(size.width, size.height - 20);
     final thirdSecondCurve = Offset(size.width, size.height);

@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
             const TSectionHeading(
                 title: 'Personal Information', showButton: false),
             TProfileMenu(
-                onPressed: () {},
+                onIconPressed: () {},
                 title: 'User Id',
                 value: '33483',
                 icon: Iconsax.copy),

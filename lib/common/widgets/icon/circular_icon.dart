@@ -29,12 +29,14 @@ class TCircularIcon extends StatelessWidget {
         width: width,
         radius: radius,
         backgroundColor: backgroundColor,
-        child: IconButton(
-            onPressed: onPressed,
-            icon: Icon(
-              icon ?? Iconsax.heart5,
-              size: iconSize ?? TSizes.lg,
-              color: color,
-            )));
+        child: Center(
+          child: IconButton(
+              onPressed: onPressed,
+              icon: Icon(
+                icon ?? Iconsax.heart5,
+                size: iconSize ?? TSizes.lg,
+                color: color,
+              )),
+        ));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/common/widgets/cart/add_to_favourite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ecommerce_flutter/common/widgets/custom_shapes/container/circle_container.dart';
@@ -68,16 +69,10 @@ class TProductImage extends StatelessWidget {
               ),
             ),
           Positioned(
-              right: 5,
-              top: 5,
-              child: TCircularIcon(
-                backgroundColor: dark
-                    ? TColors.black.withOpacity(0.9)
-                    : TColors.white.withOpacity(0.9),
-                icon: icon,
-                color: iconColor,
-                onPressed: onIconPressed,
-              )),
+            right: 5,
+            top: 5,
+            child: TAddToFavouriteButton(onIconPressed: onIconPressed),
+          ),
         ],
       ),
     );

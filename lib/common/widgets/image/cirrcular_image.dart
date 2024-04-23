@@ -12,7 +12,10 @@ class TCircularImage extends StatelessWidget {
     this.borderRadius,
     this.fit,
     this.overlayColor,
+    this.backgroundColor,
   });
+  final Color? backgroundColor;
+
   final bool isNewtowkImage;
   final String image;
   final double? height, width, borderRadius;
@@ -24,7 +27,7 @@ class TCircularImage extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          color: dark ? TColors.black : TColors.white,
+          color: backgroundColor ?? (dark ? TColors.black : TColors.white),
           borderRadius: BorderRadius.all(Radius.circular(borderRadius ?? 50))),
       height: height ?? 46,
       width: width ?? 46,

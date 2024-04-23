@@ -11,8 +11,9 @@ class TProfileMenu extends StatelessWidget {
     required this.title,
     required this.value,
     this.icon,
+    this.onIconPressed,
   });
-  final VoidCallback? onPressed;
+  final VoidCallback? onPressed, onIconPressed;
   final String title, value;
   final double? splashRadius, borderRadius;
   final IconData? icon;
@@ -49,7 +50,9 @@ class TProfileMenu extends StatelessWidget {
                   overflow: TextOverflow.ellipsis),
             ),
             Expanded(
-              child: Icon(icon ?? Iconsax.arrow_right_3, size: 18),
+              child: IconButton(
+                  onPressed: onIconPressed,
+                  icon: Icon(icon ?? Iconsax.arrow_right_3, size: 18)),
             )
           ],
         ),

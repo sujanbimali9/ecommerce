@@ -1,6 +1,6 @@
 import 'package:ecommerce_flutter/common/widgets/brand/brand_showcase.dart';
 import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
-import 'package:ecommerce_flutter/common/widgets/product_card/vertical_product_card.dart';
+import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';

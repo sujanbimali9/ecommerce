@@ -1,7 +1,7 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_tabbar.dart';
 import 'package:ecommerce_flutter/common/widgets/brand/featured_brand_card.dart';
-import 'package:ecommerce_flutter/common/widgets/cart/cart_icon_button.dart';
+import 'package:ecommerce_flutter/common/widgets/products/cart/cart_icon_button.dart';
 import 'package:ecommerce_flutter/common/widgets/search_bar/search_container.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_flutter/features/shop/screens/shop/widgets/category_card.dart';

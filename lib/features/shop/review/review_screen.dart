@@ -1,9 +1,9 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
-import 'package:ecommerce_flutter/utils/constants/colors.dart';
+import 'package:ecommerce_flutter/common/widgets/products/rating/rating_indicator.dart';
+import 'package:ecommerce_flutter/features/shop/review/widgets/overall_rating_indicator.dart';
+import 'package:ecommerce_flutter/common/widgets/products/review/user_review_card.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class ProductReviewScreen extends StatelessWidget {
   const ProductReviewScreen({super.key});
@@ -11,7 +11,7 @@ class ProductReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TAppBar(
+      appBar: const TAppBar(
         showBackArrow: true,
         title: Text('Reviews and Ratings'),
       ),
@@ -19,34 +19,20 @@ class ProductReviewScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
-                child: Text(
-                    'Ratings and review are all verified and are from people who use the same device that you use'),
-              ),
               const SizedBox(height: TSizes.spaceBtwItems),
-              Row(
-                children: [
-                  Text(
-                    '4.7',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .apply(fontSizeFactor: 5),
-                  ),
-                  Expanded(
-                      child: RatingBar(
-                          ratingWidget: RatingWidget(
-                              full: Container(
-                                color: TColors.grey,
-                              ),
-                              half: Container(),
-                              empty: Container(
-                                color: TColors.white,
-                              )),
-                          onRatingUpdate: (value) {}))
-                ],
-              )
+              const Text(
+                  'Ratings and review are all verified and are from people who use the same device that you use'),
+              const SizedBox(height: TSizes.spaceBtwItems),
+              const OverAllRating(),
+              const TRatingIndicator(rating: 4.3),
+              Text('12,342', style: Theme.of(context).textTheme.bodySmall),
+              const SizedBox(height: TSizes.spaceBtwSections),
+              const TUserReviewCard(),
+              const TUserReviewCard(),
+              const TUserReviewCard(),
+              const TUserReviewCard(),
             ],
           ),
         ),

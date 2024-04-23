@@ -1,4 +1,6 @@
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/shop/review/review_screen.dart';
+import 'package:ecommerce_flutter/common/widgets/products/review/user_review_card.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/bottom_navigation.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/product_attribute.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/product_image_slider.dart';
@@ -8,6 +10,7 @@ import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -65,14 +68,17 @@ From daily training sessions to race day excitement, the Nike Air Zoom Pegasus 3
                       const TSectionHeading(
                           title: 'Reviews(199)', showButton: false),
                       IconButton(
-                          onPressed: () {},
+                          onPressed: () =>
+                              Get.to(() => const ProductReviewScreen()),
                           icon: Icon(
                             Iconsax.arrow_right_3,
                             color: dark ? TColors.white : TColors.black,
                           ))
                     ],
-                  )
-                  // Ratings(),
+                  ),
+                  SizedBox(height: TSizes.spaceBtwItems),
+                  TUserReviewCard(),
+                  TUserReviewCard(),
                 ],
               ),
             )

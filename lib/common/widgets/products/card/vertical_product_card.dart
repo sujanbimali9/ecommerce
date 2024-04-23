@@ -1,5 +1,5 @@
 import 'package:ecommerce_flutter/common/style/box_shadow.dart';
-import 'package:ecommerce_flutter/common/widgets/cart/add_to_cart_button.dart';
+import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_cart_button.dart';
 import 'package:ecommerce_flutter/common/widgets/image/product_image.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/produt_title_price.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/product_detail_screen.dart';

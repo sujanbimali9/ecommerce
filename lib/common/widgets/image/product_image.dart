@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter/common/widgets/cart/add_to_favourite_button.dart';
+import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_favourite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ecommerce_flutter/common/widgets/custom_shapes/container/circle_container.dart';

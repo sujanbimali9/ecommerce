@@ -1,7 +1,7 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
 import 'package:ecommerce_flutter/common/widgets/icon/circular_icon.dart';
 import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
-import 'package:ecommerce_flutter/common/widgets/product_card/vertical_product_card.dart';
+import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/setting_screen.dart';
 
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';

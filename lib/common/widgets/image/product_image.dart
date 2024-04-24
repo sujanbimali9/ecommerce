@@ -2,7 +2,6 @@ import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_favourite_
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:ecommerce_flutter/common/widgets/custom_shapes/container/circle_container.dart';
-import 'package:ecommerce_flutter/common/widgets/icon/circular_icon.dart';
 import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';

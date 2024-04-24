@@ -1,7 +1,9 @@
+import 'package:ecommerce_flutter/features/shop/screens/cart/cart_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TCartCountIcon extends StatelessWidget {
@@ -23,7 +25,8 @@ class TCartCountIcon extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(TSizes.xs),
           child: IconButton(
-              onPressed: onPressed, icon: const Icon(Iconsax.shopping_bag)),
+              onPressed: onPressed ?? () => Get.to(() => const CartScreen()),
+              icon: const Icon(Iconsax.shopping_bag)),
         ),
         Positioned(
             top: 3,

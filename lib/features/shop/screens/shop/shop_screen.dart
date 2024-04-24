@@ -26,10 +26,9 @@ class ShopScreen extends StatelessWidget {
             'Shop',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          actions: [
+          actions: const [
             TCartCountIcon(
               text: '1',
-              onPressed: () {},
             )
           ],
         ),

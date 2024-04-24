@@ -76,9 +76,9 @@ From daily training sessions to race day excitement, the Nike Air Zoom Pegasus 3
                           ))
                     ],
                   ),
-                  SizedBox(height: TSizes.spaceBtwItems),
-                  TUserReviewCard(),
-                  TUserReviewCard(),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  const TUserReviewCard(),
+                  const TUserReviewCard(),
                 ],
               ),
             )

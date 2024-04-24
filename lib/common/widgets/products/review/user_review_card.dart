@@ -63,6 +63,7 @@ class TUserReviewCard extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.md),
           radius: TSizes.borderRadiusLg,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [

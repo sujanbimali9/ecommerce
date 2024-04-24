@@ -1,11 +1,13 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/personalization/screens/address/address.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/setting_tile.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/user_profile_tile.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/primary_header.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -50,7 +52,7 @@ class SettingScreen extends StatelessWidget {
                       title: 'My Addresses',
                       subtitle: 'Set shopping delivery addresses',
                       icon: Iconsax.safe_home,
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const UserAddressScreen()),
                       borderRadius: TSizes.cardRadiusSm,
                     ),
                     TSettingTile(

@@ -34,6 +34,7 @@ class ShopScreen extends StatelessWidget {
           ],
         ),
         body: NestedScrollView(
+          floatHeaderSlivers: true,
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             SliverAppBar(
                 automaticallyImplyLeading: false,
@@ -44,24 +45,28 @@ class ShopScreen extends StatelessWidget {
                 expandedHeight: 400,
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(TSizes.defaultSpace),
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: [
-                      const SizedBox(height: TSizes.spaceBtwItems),
-                      const TSearchContainer(
-                        showBorder: true,
-                        showBackgroundColor: false,
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems),
-                      TSectionHeading(
-                        title: 'Featured Brands',
-                        onPressed: () {},
-                        showButton: true,
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-                      const FeaturedBrandCard()
-                    ],
+                  child: ScrollConfiguration(
+                    behavior:
+                        const ScrollBehavior().copyWith(scrollbars: false),
+                    child: ListView(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        const SizedBox(height: TSizes.spaceBtwItems),
+                        const TSearchContainer(
+                          showBorder: true,
+                          showBackgroundColor: false,
+                        ),
+                        const SizedBox(height: TSizes.spaceBtwItems),
+                        TSectionHeading(
+                          title: 'Featured Brands',
+                          onPressed: () {},
+                          showButton: true,
+                        ),
+                        const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+                        const FeaturedBrandCard()
+                      ],
+                    ),
                   ),
                 ),
                 bottom: const TAppTabBar(

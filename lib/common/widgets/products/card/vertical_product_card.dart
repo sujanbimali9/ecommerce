@@ -6,6 +6,7 @@ import 'package:ecommerce_flutter/features/shop/screens/product_detail/product_d
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -62,17 +63,19 @@ class TVerticalProductCard extends StatelessWidget {
             ),
             const Spacer(),
             const ProductTitleAndPrice(
-              title: 'Green Nike Air Shoe',
+              title: 'Green Nike Air\n Shoe',
               price: '\$35',
               shop: 'Nike',
               isverified: true,
             ),
             const Spacer(),
-            const Padding(
-              padding: EdgeInsets.only(left: 3, right: 3, bottom: 4, top: 2),
+            Padding(
+              padding:
+                  const EdgeInsets.only(left: 3, right: 3, bottom: 4, top: 2),
               child: AddToCartButton(
-                width: 150,
-                borderRadius: TSizes.md,
+                onPressed: () {},
+                width: double.infinity,
+                borderRadius: TSizes.productImageRadius,
               ),
             ),
           ],

@@ -5,7 +5,7 @@ class TRoundedContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final EdgeInsets? padding;
-  final Color? backgroundColor;
+  final Color? backgroundColor, borderColor;
   final double radius;
   final Widget? child;
   final EdgeInsets? margin;
@@ -22,7 +22,8 @@ class TRoundedContainer extends StatelessWidget {
       this.margin,
       this.child,
       this.onPressed,
-      this.showBorder = false});
+      this.showBorder = false,
+      this.borderColor});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -33,7 +34,9 @@ class TRoundedContainer extends StatelessWidget {
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
-          border: showBorder ? Border.all(color: TColors.grey) : null,
+          border: showBorder
+              ? Border.all(color: borderColor ?? TColors.grey)
+              : null,
           color: backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(radius)),
         ),

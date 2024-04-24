@@ -20,6 +20,7 @@ class TProductAttribute extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.md),
           backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [

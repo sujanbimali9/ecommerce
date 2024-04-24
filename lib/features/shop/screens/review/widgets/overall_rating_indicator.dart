@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter/features/shop/review/widgets/progess_indicator.dart';
+import 'package:ecommerce_flutter/features/shop/screens/review/widgets/progess_indicator.dart';
 import 'package:flutter/material.dart';
 
 class OverAllRating extends StatelessWidget {

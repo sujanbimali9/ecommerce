@@ -25,8 +25,7 @@ class TProfileMenu extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(borderRadius ?? 5)),
       radius: splashRadius,
       child: Padding(
-        padding:
-            const EdgeInsets.symmetric(vertical: TSizes.spaceBtwItems / 1.5),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.xs / 2),
         child: Row(
           children: [
             const SizedBox(

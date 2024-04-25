@@ -4,7 +4,9 @@ import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
 import 'package:ecommerce_flutter/features/shop/controllers/homecontroller.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class TPromoSlider extends StatelessWidget {
@@ -16,21 +18,27 @@ class TPromoSlider extends StatelessWidget {
     final HomeController controller = HomeController.instance;
     return Column(
       children: [
-        ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 300),
-          child: CarouselSlider.builder(
-              carouselController: controller.carouselController,
-              itemCount: promo.length,
-              disableGesture: true,
-              itemBuilder: (context, index, t) => TRoundedImage(
-                    image: promo[index],
-                  ),
-              options: CarouselOptions(
-                enableInfiniteScroll: false,
-                onPageChanged: (index, reason) =>
-                    controller.updateCurrentIndex(index),
-                viewportFraction: 1,
-              )),
+        ClipRRect(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(TSizes.md),
+          ),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxHeight: 300),
+            child: CarouselSlider.builder(
+                carouselController: controller.carouselController,
+                itemCount: promo.length,
+                itemBuilder: (context, index, t) => TRoundedImage(
+                      width: double.infinity,
+                      image: promo[index],
+                      boxFit: BoxFit.cover,
+                    ),
+                options: CarouselOptions(
+                  enableInfiniteScroll: false,
+                  onPageChanged: (index, reason) =>
+                      controller.updateCurrentIndex(index),
+                  viewportFraction: 1,
+                )),
+          ),
         ),
         const SizedBox(
           height: TSizes.spaceBtwItems,

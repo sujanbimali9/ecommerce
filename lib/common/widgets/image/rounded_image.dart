@@ -7,15 +7,17 @@ class TRoundedImage extends StatelessWidget {
     this.width,
     this.height,
     required this.image,
-    this.borderRadius = TSizes.md,
+    this.borderRadius = TSizes.productImageRadius,
     this.border,
     this.boxFit,
     this.isNetworkImage = false,
     this.applyImageRadius = true,
     this.onPressed,
     this.backgroundColor,
+    this.constraints,
   });
 
+  final BoxConstraints? constraints;
   final double? width, height;
   final String image;
   final double borderRadius;
@@ -33,6 +35,7 @@ class TRoundedImage extends StatelessWidget {
       child: Container(
         height: height,
         width: width,
+        constraints: constraints,
         decoration: BoxDecoration(
             color: backgroundColor,
             border: border,
@@ -42,11 +45,10 @@ class TRoundedImage extends StatelessWidget {
               ? BorderRadius.all(Radius.circular(borderRadius))
               : BorderRadius.zero,
           child: Image(
-            image: isNetworkImage
-                ? NetworkImage(image)
-                : AssetImage(image) as ImageProvider,
-            fit: boxFit ?? BoxFit.contain,
-          ),
+              image: isNetworkImage
+                  ? NetworkImage(image)
+                  : AssetImage(image) as ImageProvider,
+              fit: boxFit ?? BoxFit.contain),
         ),
       ),
     );

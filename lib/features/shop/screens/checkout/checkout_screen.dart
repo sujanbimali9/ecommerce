@@ -7,7 +7,6 @@ import 'package:ecommerce_flutter/features/shop/screens/checkout/widgets/billlin
 import 'package:ecommerce_flutter/features/shop/screens/checkout/widgets/shipping_address_selection.dart';
 import 'package:ecommerce_flutter/features/shop/screens/payment/payment_success.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
-import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +15,6 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: TAppBar(
         showBackArrow: true,

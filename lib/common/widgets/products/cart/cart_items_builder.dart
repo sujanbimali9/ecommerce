@@ -1,4 +1,4 @@
-import 'package:ecommerce_flutter/features/shop/screens/cart/widgets/cart_item.dart';
+import 'package:ecommerce_flutter/common/widgets/products/cart/cart_item.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 

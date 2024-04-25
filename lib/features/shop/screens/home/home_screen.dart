@@ -1,5 +1,6 @@
 import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
+import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_flutter/common/widgets/search_bar/search_container.dart';
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                     child: TSearchContainer(),
                   ),
                   THomeCategories(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const SubCategoryScreen()),
                     title: const [
                       'shoeIcon',
                       'electronicsIcon',

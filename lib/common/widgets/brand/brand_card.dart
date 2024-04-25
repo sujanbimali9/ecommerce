@@ -35,6 +35,7 @@ class TBrandCard extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TBrandTitleTextWithVerifyIcon(
                     isverified: true,

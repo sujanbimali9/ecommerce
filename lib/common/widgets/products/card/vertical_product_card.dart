@@ -58,12 +58,9 @@ class TVerticalProductCard extends StatelessWidget {
               padding: padding,
               width: width,
             ),
-            const SizedBox(
-              height: TSizes.spaceBtwItems / 2,
-            ),
             const Spacer(),
             const ProductTitleAndPrice(
-              title: 'Green Nike Air\n Shoe',
+              title: 'Green Nike \nAir Shoe',
               price: '\$35',
               shop: 'Nike',
               isverified: true,

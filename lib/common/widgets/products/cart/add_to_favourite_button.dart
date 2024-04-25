@@ -5,21 +5,30 @@ import 'package:flutter/material.dart';
 
 class TAddToFavouriteButton extends StatelessWidget {
   const TAddToFavouriteButton(
-      {super.key, this.iconColor, this.icon, this.onIconPressed});
+      {super.key,
+      this.iconColor,
+      this.icon,
+      this.onIconPressed,
+      this.backroundColor,
+      this.height,
+      this.width});
 
-  final Color? iconColor;
+  final Color? iconColor, backroundColor;
 
   final IconData? icon;
-
+  final double? height, width;
   final VoidCallback? onIconPressed;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return TCircularIcon(
-      backgroundColor: dark
-          ? TColors.black.withOpacity(0.9)
-          : TColors.white.withOpacity(0.9),
+      height: height,
+      width: width,
+      backgroundColor: backroundColor ??
+          (dark
+              ? TColors.black.withOpacity(0.9)
+              : TColors.white.withOpacity(0.9)),
       icon: icon,
       color: iconColor,
       onPressed: onIconPressed,

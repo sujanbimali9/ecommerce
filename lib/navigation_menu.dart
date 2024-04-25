@@ -21,7 +21,7 @@ class TNavigationmenu extends StatelessWidget {
       }),
       bottomNavigationBar: Obx(() {
         return NavigationBar(
-            height: 80,
+            height: 60,
             elevation: 0,
             selectedIndex: controller.index.value,
             onDestinationSelected: (value) => controller.index.value = value,

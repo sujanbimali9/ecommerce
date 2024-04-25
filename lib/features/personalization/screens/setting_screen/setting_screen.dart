@@ -3,7 +3,9 @@ import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/address/address.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/setting_tile.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/user_profile_tile.dart';
+import 'package:ecommerce_flutter/features/shop/screens/cart/cart_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/primary_header.dart';
+import 'package:ecommerce_flutter/features/shop/screens/myorders/my_order_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -59,14 +61,14 @@ class SettingScreen extends StatelessWidget {
                       title: 'My Cart',
                       subtitle: 'Add, remove products and move to checkout',
                       icon: Iconsax.shopping_cart,
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const CartScreen()),
                       borderRadius: TSizes.cardRadiusSm,
                     ),
                     TSettingTile(
                       title: 'My Order',
                       subtitle: 'Track your orders',
                       icon: Iconsax.bag_tick,
-                      onPressed: () {},
+                      onPressed: () => Get.to(() => const MyOrderScreen()),
                       borderRadius: TSizes.cardRadiusSm,
                     ),
                     TSettingTile(

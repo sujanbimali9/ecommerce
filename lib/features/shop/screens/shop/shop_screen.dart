@@ -4,12 +4,14 @@ import 'package:ecommerce_flutter/common/widgets/brand/featured_brand_card.dart'
 import 'package:ecommerce_flutter/common/widgets/products/cart/cart_icon_button.dart';
 import 'package:ecommerce_flutter/common/widgets/search_bar/search_container.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/shop/screens/allbrands/all_brand_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/shop/widgets/category_card.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ShopScreen extends StatelessWidget {
   const ShopScreen({super.key});
@@ -33,9 +35,10 @@ class ShopScreen extends StatelessWidget {
           ],
         ),
         body: NestedScrollView(
-          floatHeaderSlivers: true,
+          floatHeaderSlivers: false,
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
             SliverAppBar(
+                excludeHeaderSemantics: true,
                 automaticallyImplyLeading: false,
                 pinned: true,
                 floating: true,
@@ -59,7 +62,7 @@ class ShopScreen extends StatelessWidget {
                         const SizedBox(height: TSizes.spaceBtwItems),
                         TSectionHeading(
                           title: 'Featured Brands',
-                          onPressed: () {},
+                          onPressed: () => Get.to(() => const AllBrandScreen()),
                           showButton: true,
                         ),
                         const SizedBox(height: TSizes.spaceBtwItems / 1.5),

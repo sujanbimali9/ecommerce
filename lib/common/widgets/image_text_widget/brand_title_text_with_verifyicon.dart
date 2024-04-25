@@ -15,6 +15,8 @@ class TBrandTitleTextWithVerifyIcon extends StatelessWidget {
     this.iconColor,
     this.textAlign = TextAlign.center,
     this.brandTextSizes = TextSizes.small,
+    this.mainAxisAlignment,
+    this.crossAxisAlignment,
   });
 
   final String text;
@@ -23,10 +25,14 @@ class TBrandTitleTextWithVerifyIcon extends StatelessWidget {
   final TextAlign? textAlign;
   final TextSizes brandTextSizes;
   final bool isverified;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+      crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
       children: [
         TBrandTitleText(
           title: text,
@@ -35,7 +41,7 @@ class TBrandTitleTextWithVerifyIcon extends StatelessWidget {
           color: textColor,
           textSizes: brandTextSizes,
         ),
-       const SizedBox(width: TSizes.sm / 2),
+        const SizedBox(width: TSizes.sm / 2),
         if (isverified)
           Icon(
             Iconsax.verify5,

@@ -19,6 +19,9 @@ class TProductImage extends StatelessWidget {
     this.iconColor = Colors.red,
     this.onIconPressed,
     this.padding,
+    this.boxFit,
+    this.backgroundColor,
+    this.iconBackgroundColor,
   }) : super(key: key);
 
   final String image;
@@ -30,6 +33,8 @@ class TProductImage extends StatelessWidget {
   final Color? iconColor;
   final double? padding;
   final VoidCallback? onIconPressed;
+  final BoxFit? boxFit;
+  final Color? backgroundColor, iconBackgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +45,12 @@ class TProductImage extends StatelessWidget {
       width: width,
       radius: TSizes.productImageRadius,
       padding: EdgeInsets.all(padding ?? 0),
-      backgroundColor: dark ? TColors.dark : TColors.light,
+      backgroundColor: backgroundColor ?? (dark ? TColors.dark : TColors.light),
       child: Stack(
         alignment: Alignment.center,
         children: [
           TRoundedImage(
+            boxFit: boxFit,
             image: image,
             width: double.infinity,
             isNetworkImage: isNetworkImage ?? false,
@@ -70,7 +76,10 @@ class TProductImage extends StatelessWidget {
           Positioned(
             right: 5,
             top: 5,
-            child: TAddToFavouriteButton(onIconPressed: onIconPressed),
+            child: TAddToFavouriteButton(
+              onIconPressed: onIconPressed,
+              backroundColor: iconBackgroundColor,
+            ),
           ),
         ],
       ),

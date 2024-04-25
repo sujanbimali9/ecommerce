@@ -22,7 +22,7 @@ class ProductTitleAndPrice extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TProductTitleText(text: title, smallText: true),
-          const SizedBox(height: TSizes.spaceBtwItems / 2),
+          const SizedBox(height: TSizes.spaceBtwItems / 3),
           TBrandTitleTextWithVerifyIcon(text: shop, isverified: isverified),
           Row(
             children: [

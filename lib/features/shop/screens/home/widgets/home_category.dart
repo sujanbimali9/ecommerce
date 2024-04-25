@@ -1,7 +1,9 @@
 import 'package:ecommerce_flutter/common/widgets/image_text_widget/vertical_image_text.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class THomeCategories extends StatelessWidget {
   final VoidCallback onPressed;
@@ -37,7 +39,7 @@ class THomeCategories extends StatelessWidget {
               itemBuilder: (context, index) => VerticalImageText(
                 image: categories[index],
                 title: title[index],
-                onPressed: () {},
+                onPressed: () => Get.to(() => const SubCategoryScreen()),
               ),
             ),
           ),

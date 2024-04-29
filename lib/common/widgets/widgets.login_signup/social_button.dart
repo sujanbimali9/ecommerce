@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/features/authentication/controllers/login_controller.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,8 @@ class TSocialButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         IconButton.outlined(
-          onPressed: () {},
+          onPressed: () async =>
+              await LoginController.instance.loginWithGoogle(),
           icon: Image.asset(
             TImages.google,
             height: TSizes.iconLg,

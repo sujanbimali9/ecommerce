@@ -1,8 +1,10 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
 import 'package:ecommerce_flutter/common/widgets/products/cart/cart_icon_button.dart';
+import 'package:ecommerce_flutter/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class THomeAppBar extends StatelessWidget {
   const THomeAppBar({
@@ -11,6 +13,7 @@ class THomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = Get.put(UserController());
     return TAppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,13 +25,13 @@ class THomeAppBar extends StatelessWidget {
                 .labelMedium!
                 .apply(color: TColors.grey),
           ),
-          Text(
-            TTexts.homeAppbarSubTitle,
-            style: Theme.of(context)
-                .textTheme
-                .headlineSmall!
-                .apply(color: TColors.white),
-          )
+          Obx(() => Text(
+                userController.user.value.fullName,
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .apply(color: TColors.white),
+              ))
         ],
       ),
       actions: const [

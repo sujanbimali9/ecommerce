@@ -1,4 +1,3 @@
-import 'package:ecommerce_flutter/features/authentication/screens/signup/signup_success_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/constants/text_strings.dart';
@@ -6,12 +5,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../controllers/verify_email_controller.dart';
+
 class SignUpVerifyScreen extends StatelessWidget {
   const SignUpVerifyScreen({super.key, required this.email});
   final String email;
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(VerifyEmailController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -43,8 +45,8 @@ class SignUpVerifyScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Get.to(() => const SignUpSuccessScreen());
+                      onPressed: () async {
+                        await controller.checkEmailVerificaitonStatus();
                       },
                       child: const Text(TTexts.tContinue),
                     ),
@@ -55,7 +57,7 @@ class SignUpVerifyScreen extends StatelessWidget {
                       shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(Radius.circular(5))),
                     ),
-                    onPressed: () {},
+                    onPressed: () => controller.sendEmailVerification(),
                     child: Text(
                       TTexts.resendEmail,
                       style: Theme.of(context).textTheme.bodyMedium,

@@ -18,8 +18,8 @@ class TCouponsCode extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    maximumSize: Size(80, 70),
-                    minimumSize: Size(80, 50),
+                    maximumSize: const Size(80, 70),
+                    minimumSize: const Size(80, 50),
                     foregroundColor: dark
                         ? TColors.white.withOpacity(0.5)
                         : TColors.dark.withOpacity(0.5),

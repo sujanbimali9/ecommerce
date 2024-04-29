@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/features/authentication/controllers/forget_password_controller.dart';
 import 'package:ecommerce_flutter/features/authentication/screens/login/login_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
@@ -57,6 +58,13 @@ class ResetPasswordScreen extends StatelessWidget {
                       Get.offAll(() => const LoginScreen());
                     },
                     child: const Text(TTexts.tContinue)),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed:
+                        ForgetPasswordController.instance.resendResetEmail,
+                    child: const Text(TTexts.resendEmail)),
               )
             ],
           ),

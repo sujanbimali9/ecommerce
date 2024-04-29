@@ -66,10 +66,10 @@ class TSliderIndicator extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: List<Widget>.generate(
           promo.length,
-          (index) => Obx(
-                () => GestureDetector(
-                  onTap: () => controller.onDotClick(index),
-                  child: TRoundedContainer(
+          (index) => GestureDetector(
+                onTap: () => controller.onDotClick(index),
+                child: Obx(
+                  () => TRoundedContainer(
                     height: controller.currentIndex.value == index ? 4 : 3,
                     width: controller.currentIndex.value == index ? 20 : 10,
                     radius: 10,

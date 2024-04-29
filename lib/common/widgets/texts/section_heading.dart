@@ -1,6 +1,4 @@
-import 'package:ecommerce_flutter/features/shop/screens/allproduct/all_product_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class TSectionHeading extends StatelessWidget {
   const TSectionHeading({

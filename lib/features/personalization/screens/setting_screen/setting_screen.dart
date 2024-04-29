@@ -1,5 +1,7 @@
 import 'package:ecommerce_flutter/common/widgets/app_bar/custom_appbar.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
+import 'package:ecommerce_flutter/features/authentication/screens/login/login_screen.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/address/address.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/setting_tile.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/widgets/user_profile_tile.dart';
@@ -143,7 +145,10 @@ class SettingScreen extends StatelessWidget {
                     SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await AuthenticaitonRepository.instance.signOut();
+                            Get.offAll(() => const LoginScreen());
+                          },
                           child: const Text(
                             'Logout',
                           )),

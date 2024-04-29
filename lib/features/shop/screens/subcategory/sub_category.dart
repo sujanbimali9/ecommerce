@@ -4,7 +4,6 @@ import 'package:ecommerce_flutter/common/widgets/products/card/horizontal_produc
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoryScreen extends StatelessWidget {
@@ -36,10 +35,10 @@ class SubCategoryScreen extends StatelessWidget {
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
             SizedBox(
-              height: 120,
+              height: 130,
               child: ListView.separated(
                 itemCount: 5,
-                separatorBuilder: (context, index) => SizedBox(
+                separatorBuilder: (context, index) => const SizedBox(
                   width: TSizes.spaceBtwItems,
                 ),
                 scrollDirection: Axis.horizontal,

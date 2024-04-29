@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class TCircularImage extends StatelessWidget {
   const TCircularImage({
     super.key,
-    this.isNewtowkImage = false,
+    this.isNetworkImage = false,
     required this.image,
     this.height,
     this.width,
@@ -16,7 +16,7 @@ class TCircularImage extends StatelessWidget {
   });
   final Color? backgroundColor;
 
-  final bool isNewtowkImage;
+  final bool isNetworkImage;
   final String image;
   final double? height, width, borderRadius;
   final BoxFit? fit;
@@ -32,7 +32,7 @@ class TCircularImage extends StatelessWidget {
       height: height ?? 46,
       width: width ?? 46,
       child: Image(
-        image: isNewtowkImage
+        image: isNetworkImage
             ? NetworkImage(image)
             : AssetImage(image) as ImageProvider,
         fit: fit ?? BoxFit.contain,

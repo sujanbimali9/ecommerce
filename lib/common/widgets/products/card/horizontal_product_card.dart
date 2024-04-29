@@ -1,7 +1,6 @@
 import 'package:ecommerce_flutter/common/widgets/custom_shapes/container/circle_container.dart';
 import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
 import 'package:ecommerce_flutter/common/widgets/image_text_widget/brand_title_text_with_verifyicon.dart';
-import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_cart_button.dart';
 import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_favourite_button.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/product_price_text.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/product_text.dart';
@@ -22,7 +21,7 @@ class HorizontalProductCard extends StatelessWidget {
 
     return Container(
       width: 310,
-      height: 120,
+      height: 130,
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
           color: dark ? TColors.darkerGrey : TColors.light,
@@ -35,8 +34,8 @@ class HorizontalProductCard extends StatelessWidget {
           Stack(
             children: [
               TRoundedImage(
-                height: 120,
-                width: 120,
+                height: 130,
+                width: 130,
                 // borderRadius: TSizes.productImageRadius - 2,
                 backgroundColor:
                     dark ? TColors.dark.withOpacity(0.5) : TColors.white,
@@ -89,7 +88,7 @@ class HorizontalProductCard extends StatelessWidget {
                     children: [
                       TProductPriceText(price: '20'),
                       Spacer(),
-                      AddToCartButton(),
+                      // AddToCartButton(),
                       SizedBox(width: TSizes.spaceBtwItems / 2),
                     ],
                   )

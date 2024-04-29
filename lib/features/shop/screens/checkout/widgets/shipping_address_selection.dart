@@ -15,30 +15,30 @@ class ShippingAddressSelection extends StatelessWidget {
         TSectionHeading(
             title: 'Shipping Address', buttonText: 'change', onPressed: () {}),
         Text('Sujan Bimali', style: Theme.of(context).textTheme.bodyLarge),
-        SizedBox(height: TSizes.spaceBtwItems / 2),
+        const SizedBox(height: TSizes.spaceBtwItems / 2),
         Row(
           children: [
-            Icon(
+            const Icon(
               Iconsax.call,
               size: 16,
               color: TColors.grey,
             ),
-            SizedBox(width: TSizes.spaceBtwItems / 2),
+            const SizedBox(width: TSizes.spaceBtwItems / 2),
             Text(
               '+977-9749223210',
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ],
         ),
-        SizedBox(height: TSizes.spaceBtwItems / 2),
+        const SizedBox(height: TSizes.spaceBtwItems / 2),
         Row(
           children: [
-            Icon(
+            const Icon(
               Iconsax.location,
               size: 16,
               color: TColors.grey,
             ),
-            SizedBox(width: TSizes.spaceBtwItems / 2),
+            const SizedBox(width: TSizes.spaceBtwItems / 2),
             Text(
               'Kamal Rural Municipality,Jhapa, Nepal',
               softWrap: true,

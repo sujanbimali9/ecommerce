@@ -17,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = UserController.instance.user;
+
     return Scaffold(
       appBar: const TAppBar(
         showBackArrow: true,
@@ -35,10 +36,12 @@ class ProfileScreen extends StatelessWidget {
                       : TImages.user,
                   height: 80,
                   width: 80,
+                  boxFit: BoxFit.cover,
                   borderRadius: 40,
                 )),
             TextButton(
-                onPressed: () {}, child: const Text('change profile picture')),
+                onPressed: UserController.instance.uploadProfilePicture,
+                child: const Text('change profile picture')),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
             const Divider(endIndent: 30, indent: 30),
             const SizedBox(height: TSizes.spaceBtwItems),

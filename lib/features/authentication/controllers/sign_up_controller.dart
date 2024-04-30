@@ -49,7 +49,7 @@ class SignUpController extends GetxController {
             firstName: firstName.text.trim(),
             lastName: lastName.text.trim(),
             phoneNo: phoneNo.text.trim(),
-            profilePicture: TImages.userProfileImage3,
+            profilePicture: '',
             userName: userName.text.trim());
 
         final userRepository = Get.put(UserRepository());

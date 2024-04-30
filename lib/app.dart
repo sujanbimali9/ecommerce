@@ -1,5 +1,6 @@
 import 'package:ecommerce_flutter/bindings/general_bindings.dart';
 import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
+import 'package:ecommerce_flutter/routes/app_routes.dart';
 import 'package:ecommerce_flutter/utils/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      getPages: AppRoutes.page,
       initialBinding: GeneralBindings(),
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,

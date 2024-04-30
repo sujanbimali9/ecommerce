@@ -1,3 +1,4 @@
+import 'package:ecommerce_flutter/common/widgets/image/cirrcular_image.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
@@ -11,10 +12,12 @@ class VerticalImageText extends StatelessWidget {
     required this.image,
     required this.title,
     required this.onPressed,
+    this.isNetworkImage = true,
   });
   final Color? textColor, backgroundColor;
   final String image, title;
   final VoidCallback onPressed;
+  final bool isNetworkImage;
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +28,14 @@ class VerticalImageText extends StatelessWidget {
         padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
         child: Column(
           children: [
-            Container(
-              height: 56,
-              width: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
-              decoration: BoxDecoration(
-                  color:
-                      backgroundColor ?? (dark ? TColors.black : TColors.white),
-                  borderRadius: const BorderRadius.all(Radius.circular(28))),
-              child: Center(
-                  child: Image.asset(
-                image,
-                fit: BoxFit.cover,
-                color: TColors.dark,
-              )),
+            TCircularImage(
+              image: image,
+              isNetworkImage: isNetworkImage,
+              backgroundColor: backgroundColor,
+              fit: BoxFit.cover,
+              overlayColor: THelperFunctions.isDarkMode(context)
+                  ? TColors.light
+                  : TColors.dark,
             ),
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,

@@ -41,7 +41,7 @@ class NavigatorMenuControler extends GetxController {
   Rx<int> index = 0.obs;
   final List<Widget> screen = const [
     HomeScreen(),
-    ShopScreen(),
+    StoreScreen(),
     WishlistScreen(),
     SettingScreen(),
   ];

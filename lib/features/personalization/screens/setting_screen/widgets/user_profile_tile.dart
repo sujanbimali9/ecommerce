@@ -18,6 +18,7 @@ class UserProfileTile extends StatelessWidget {
     return ListTile(
       leading: Obx(
         () => TRoundedImage(
+          boxFit: BoxFit.cover,
           isNetworkImage: user.value.profilePicture.isNotEmpty,
           image: user.value.profilePicture.isNotEmpty
               ? user.value.profilePicture

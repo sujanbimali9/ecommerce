@@ -1,4 +1,5 @@
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/shop/models/product_model.dart';
 import 'package:ecommerce_flutter/features/shop/screens/review/review_screen.dart';
 import 'package:ecommerce_flutter/common/widgets/products/review/user_review_card.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/bottom_navigation.dart';
@@ -15,8 +16,9 @@ import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
 
+  final ProductModel product;
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);

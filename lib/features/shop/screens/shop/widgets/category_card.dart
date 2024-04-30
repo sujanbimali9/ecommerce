@@ -2,6 +2,7 @@ import 'package:ecommerce_flutter/common/widgets/brand/brand_showcase.dart';
 import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
+import 'package:ecommerce_flutter/features/shop/models/category_model.dart';
 import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -9,15 +10,19 @@ import 'package:flutter/material.dart';
 class TCategoryTab extends StatelessWidget {
   const TCategoryTab({
     super.key,
-    required this.images,
-    required this.brand,
-    required this.noOfProducts,
+    required this.category,
   });
+  final CategoryModel category;
 
-  final List<String> images;
-  final String brand, noOfProducts;
   @override
   Widget build(BuildContext context) {
+    final List<String> images = [
+      TImages.productImage1,
+      TImages.productImage2,
+      TImages.productImage3
+    ];
+    const String brand = 'Samsung';
+    const String noOfProducts = '470 Products';
     return ListView(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

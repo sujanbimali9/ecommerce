@@ -21,7 +21,7 @@ class PaymentSuccessScreen extends StatelessWidget {
               image: TImages.successfulPaymentIcon,
               title: 'Payment Success!',
               subtitle: 'your item will be shipped soon',
-              onPressed: () => Get.off(() => const TNavigationmenu())),
+              onPressed: () => Get.offAll(() => const TNavigationmenu())),
         ),
       ),
     );

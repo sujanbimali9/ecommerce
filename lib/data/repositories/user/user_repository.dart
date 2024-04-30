@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_flutter/features/authentication/models/user_model.dart';
 import 'package:ecommerce_flutter/utils/exceptions/firebase_auth_exceptions.dart';
@@ -6,7 +9,9 @@ import 'package:ecommerce_flutter/utils/exceptions/format_exceptions.dart';
 import 'package:ecommerce_flutter/utils/exceptions/platform_exceptions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_cloud_firestore/firebase_cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserRepository extends GetxController {
   static UserRepository instance = Get.find();
@@ -100,6 +105,23 @@ class UserRepository extends GetxController {
           .delete();
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (e) {
+      throw TFormatException(e.message).message;
+    } on TPlatformException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    }
+  }
+
+  Future<String> uploadImage(String firebasePath, XFile image) async {
+    try {
+      final storage = FirebaseStorage.instance;
+      final ref = storage.ref(firebasePath).child(image.name);
+      await ref.putFile(File(image.path));
+      final url = await ref.getDownloadURL();
+      log(url);
+      return url;
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
     } on FormatException catch (e) {

@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_flutter/common/widgets/shimmer_effect/shimmer_effect.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
@@ -44,11 +46,20 @@ class TRoundedImage extends StatelessWidget {
           borderRadius: applyImageRadius
               ? BorderRadius.all(Radius.circular(borderRadius))
               : BorderRadius.zero,
-          child: Image(
-              image: isNetworkImage
-                  ? NetworkImage(image)
-                  : AssetImage(image) as ImageProvider,
-              fit: boxFit ?? BoxFit.contain),
+          child: isNetworkImage
+              ? CachedNetworkImage(
+                  fit: boxFit ?? BoxFit.contain,
+                  imageUrl: image,
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  progressIndicatorBuilder: (context, url, progress) =>
+                      TShimmerEffect(
+                        height: height ?? 46,
+                        width: width ?? 46,
+                      ))
+              : Image(
+                  image: AssetImage(image) as ImageProvider,
+                  fit: boxFit ?? BoxFit.contain,
+                ),
         ),
       ),
     );

@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:ecommerce_flutter/features/authentication/screens/signup/signup_verify_screen.dart';
 import 'package:ecommerce_flutter/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_flutter/navigation_menu.dart';
 import 'package:ecommerce_flutter/utils/helpers/network_manager.dart';
@@ -52,7 +53,6 @@ class LoginController extends GetxController {
       final UserCredential userCredential =
           await AuthenticaitonRepository.instance.loginWithGoogle();
       log('login success saving data to firebase');
-      print(userCredential.user);
       await userController.saveUserData(userCredential);
       TFullScreenLoader.removeLoader();
       Get.offAll(() => const TNavigationmenu());
@@ -83,6 +83,10 @@ class LoginController extends GetxController {
                 emailController.text.trim(), passwordController.text.trim());
 
         if (userCredential.user != null) {
+          if (!(userCredential.user!.emailVerified)) {
+            Get.to(() =>
+                SignUpVerifyScreen(email: userCredential.user!.email ?? ''));
+          }
           localStorage.write('rememberMe', rememberMe.value);
           if (rememberMe.value) {
             localStorage.write('email', emailController.text);

@@ -12,6 +12,7 @@ import 'package:ecommerce_flutter/utils/popups/loader.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
@@ -93,6 +94,7 @@ class UserController extends GetxController {
     } catch (e) {
       TFullScreenLoader.removeLoader();
       TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
+      TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
     }
   }
 
@@ -142,6 +144,27 @@ class UserController extends GetxController {
       await userRepository.updateSingleField(data);
     } catch (e) {
       throw e.toString();
+    }
+  }
+
+  Future<void> uploadProfilePicture() async {
+    final ImagePicker picker = ImagePicker();
+
+    try {
+      final XFile? image = await picker.pickImage(
+          source: ImageSource.gallery,
+          maxHeight: 512,
+          maxWidth: 512,
+          imageQuality: 70);
+      if (image != null) {
+        final url = await userRepository.uploadImage(
+            'Users/images/profilePictures/${user.value.id}', image);
+        await userRepository.updateSingleField({'profilePicture': url});
+        user.value.profilePicture = url;
+        user.refresh();
+      }
+    } catch (e) {
+      TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
     }
   }
 }

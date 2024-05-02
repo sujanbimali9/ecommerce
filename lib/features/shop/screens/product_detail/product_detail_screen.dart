@@ -8,6 +8,7 @@ import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/p
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/produt_meta_data.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/widgets/rating_and_share.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
+import 'package:ecommerce_flutter/utils/constants/enums.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ class ProductDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const TProductImageSlider(),
+            TProductImageSlider(product: product),
             Padding(
               padding: const EdgeInsets.only(
                   right: TSizes.defaultSpace,
@@ -36,30 +37,26 @@ class ProductDetailScreen extends StatelessWidget {
                   bottom: TSizes.defaultSpace),
               child: Column(
                 children: [
-                  const TRatingAndShare(),
-                  const TProductMetaData(),
+                  TRatingAndShare(product: product),
+                  TProductMetaData(product: product),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  const TProductAttribute(),
-                  const SizedBox(height: TSizes.spaceBtwItems),
+                  if (product.productType == ProductType.variable.toString())
+                    TProductAttribute(product: product),
+                  if (product.productType == ProductType.variable.toString())
+                    const SizedBox(height: TSizes.spaceBtwItems),
                   const TSectionHeading(
                       title: 'Description', showButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
-                  const ReadMoreText(
-                    '''Introducing the Nike Air Zoom Pegasus 38, where legendary comfort meets unmatched performance. Engineered for runners who demand excellence, this dynamic shoe boasts a sleek design fused with cutting-edge technology.
-
-Crafted with a breathable mesh upper, the Air Zoom Pegasus 38 ensures optimal airflow, keeping your feet cool and comfortable mile after mile. The innovative Zoom Air unit in the forefoot delivers responsive cushioning with every stride, providing a spring-like sensation that propels you forward.
-
-Designed for versatility, the Pegasus 38 features a durable rubber outsole with a waffle pattern for superior traction on various surfaces, whether you're pounding the pavement or hitting the trails. Plus, the padded collar and secure lace-up closure offer a snug, supportive fit that locks your foot in place for a distraction-free run.
-
-From daily training sessions to race day excitement, the Nike Air Zoom Pegasus 38 is your go-to shoe for conquering any distance with confidence and style.''',
+                  ReadMoreText(
+                    product.description ?? '',
                     trimLines: 2,
                     trimCollapsedText: 'Show more',
                     trimMode: TrimMode.Line,
                     trimExpandedText: 'less',
-                    moreStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-                    lessStyle:
-                        TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                    moreStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w500),
+                    lessStyle: const TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: TSizes.spaceBtwItems),
                   const Divider(),

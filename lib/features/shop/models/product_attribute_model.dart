@@ -5,6 +5,8 @@ class ProductAttributeModel {
     this.name,
     this.values,
   });
+  static ProductAttributeModel get empty =>
+      ProductAttributeModel(name: '', values: []);
 
   ProductAttributeModel copyWith({
     String? name,

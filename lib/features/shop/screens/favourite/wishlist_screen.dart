@@ -3,8 +3,7 @@ import 'package:ecommerce_flutter/common/widgets/icon/circular_icon.dart';
 import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/setting_screen.dart';
-
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
+import 'package:ecommerce_flutter/features/shop/models/product_model.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,9 +31,8 @@ class WishlistScreen extends StatelessWidget {
           child: Column(
             children: [
               TGridLayout(
-                  itemBuilder: (context, index) => const TVerticalProductCard(
-                        image: TImages.productImage7,
-                        iconColor: Colors.red,
+                  itemBuilder: (context, index) => TVerticalProductCard(
+                        product: ProductModel.empty,
                       ),
                   itemCount: 20),
             ],

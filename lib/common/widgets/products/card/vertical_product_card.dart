@@ -1,15 +1,16 @@
 import 'package:ecommerce_flutter/common/style/box_shadow.dart';
+import 'package:ecommerce_flutter/common/widgets/image_text_widget/brand_title_text_with_verifyicon.dart';
 import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_cart_button.dart';
 import 'package:ecommerce_flutter/common/widgets/image/product_image.dart';
-import 'package:ecommerce_flutter/common/widgets/texts/produt_title_price.dart';
+import 'package:ecommerce_flutter/common/widgets/texts/product_text.dart';
+import 'package:ecommerce_flutter/features/shop/controllers/product/productcontroller.dart';
 import 'package:ecommerce_flutter/features/shop/models/product_model.dart';
 import 'package:ecommerce_flutter/features/shop/screens/product_detail/product_detail_screen.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
+import 'package:ecommerce_flutter/utils/constants/enums.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class TVerticalProductCard extends StatelessWidget {
@@ -31,6 +32,7 @@ class TVerticalProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
+    final productController = ProductController.instance;
     return GestureDetector(
       onTap: () => Get.to(() => ProductDetailScreen(product: product)),
       child: Container(
@@ -44,7 +46,8 @@ class TVerticalProductCard extends StatelessWidget {
           children: [
             TProductImage(
               image: product.thumbnail,
-              discoutPercentage: '40%',
+              discoutPercentage: productController.salePercentage(
+                  product.price, product.salePrice),
               height: height ?? 160,
               icon: icon,
               iconColor: iconColor,
@@ -54,12 +57,36 @@ class TVerticalProductCard extends StatelessWidget {
               width: width,
             ),
             const Spacer(),
-            /*   ProductTitleAndPrice(
-              title: product.title,
-              price: product.salePrice,
-              shop: product.brand!.name,
-              isverified: true,
-            ),*/
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: TSizes.sm),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TProductTitleText(text: product.title, smallText: true),
+                  const SizedBox(height: TSizes.spaceBtwItems / 3),
+                  TBrandTitleTextWithVerifyIcon(
+                      text: product.brand!.name, isverified: true),
+                  Flexible(
+                    child: Column(
+                      children: [
+                        if (product.productType ==
+                                ProductType.single.toString() &&
+                            product.salePrice > 0)
+                          Text(product.price.toString(),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        Text(productController.getProductPrice(product),
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                            style: Theme.of(context).textTheme.headlineMedium),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const Spacer(),
             Padding(
               padding:

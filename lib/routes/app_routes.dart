@@ -31,8 +31,8 @@ class AppRoutes {
     GetPage(name: TRoutes.subCategories, page: () => const SubCategoryScreen()),
     GetPage(
         name: TRoutes.productReviews, page: () => const ProductReviewScreen()),
-    GetPage(
-        name: TRoutes.productDetails, page: () => const ProductDetailScreen()),
+    // GetPage(
+    //     name: TRoutes.productDetails, page: () => const ProductDetailScreen()),
     GetPage(name: TRoutes.order, page: () => const MyOrderScreen()),
     GetPage(name: TRoutes.checkout, page: () => const CheckoutScreen()),
     GetPage(name: TRoutes.cart, page: () => const CartScreen()),

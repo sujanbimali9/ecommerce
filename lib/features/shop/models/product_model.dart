@@ -11,7 +11,7 @@ class ProductModel {
   DateTime? date;
   double salePrice;
   String thumbnail;
-  String description;
+  String? description;
   bool? isFeatured;
   BrandModel? brand;
   String? categoryId;
@@ -28,7 +28,7 @@ class ProductModel {
     this.date,
     required this.salePrice,
     required this.thumbnail,
-    required this.description,
+    this.description,
     this.isFeatured,
     this.brand,
     this.categoryId,
@@ -37,6 +37,15 @@ class ProductModel {
     this.productAttributes,
     this.productVariations,
   });
+
+  static ProductModel get empty => ProductModel(
+      id: '',
+      stock: 0,
+      price: 0,
+      title: '',
+      salePrice: 0,
+      thumbnail: '',
+      productType: '');
 
   ProductModel copyWith({
     String? id,

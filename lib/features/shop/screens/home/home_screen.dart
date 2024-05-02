@@ -2,7 +2,7 @@ import 'package:ecommerce_flutter/common/widgets/layout/grid_layout.dart';
 import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_card.dart';
 import 'package:ecommerce_flutter/common/widgets/shimmer_effect/vertical_product_shimmer.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
-import 'package:ecommerce_flutter/features/shop/controllers/productcontroller.dart';
+import 'package:ecommerce_flutter/features/shop/controllers/product/productcontroller.dart';
 import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +12,6 @@ import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_appbar
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_category.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_promo_slider.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/primary_header.dart';
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {

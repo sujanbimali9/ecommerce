@@ -18,6 +18,14 @@ class ProductVariationModel {
     required this.attributesValues,
   });
 
+  static ProductVariationModel get empty => ProductVariationModel(
+      id: '',
+      stock: 0,
+      price: 0,
+      salePrice: 0,
+      image: '',
+      attributesValues: {});
+
   ProductVariationModel copyWith({
     String? id,
     String? sku,

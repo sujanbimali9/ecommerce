@@ -8,7 +8,6 @@ import 'package:ecommerce_flutter/features/shop/controllers/categorycontroller.d
 import 'package:ecommerce_flutter/features/shop/screens/allbrands/all_brand_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/shop/widgets/category_card.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

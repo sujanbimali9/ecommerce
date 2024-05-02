@@ -8,7 +8,7 @@ class VerticalImageText extends StatelessWidget {
   const VerticalImageText({
     super.key,
     this.textColor = TColors.white,
-    this.backgroundColor = TColors.white,
+    this.backgroundColor,
     required this.image,
     required this.title,
     required this.onPressed,
@@ -31,8 +31,11 @@ class VerticalImageText extends StatelessWidget {
             TCircularImage(
               image: image,
               isNetworkImage: isNetworkImage,
-              backgroundColor: backgroundColor,
-              fit: BoxFit.cover,
+              backgroundColor: backgroundColor ??
+                  (THelperFunctions.isDarkMode(context)
+                      ? TColors.dark
+                      : TColors.light),
+              fit: BoxFit.contain,
               overlayColor: THelperFunctions.isDarkMode(context)
                   ? TColors.light
                   : TColors.dark,

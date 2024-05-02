@@ -3,7 +3,7 @@ class ProductVariationModel {
   String? sku;
   int stock;
   double price;
-  double salePrice;
+  double? salePrice;
   String image;
   String? description;
   Map<String, dynamic> attributesValues;
@@ -12,7 +12,7 @@ class ProductVariationModel {
     this.sku,
     required this.stock,
     required this.price,
-    required this.salePrice,
+    this.salePrice,
     required this.image,
     this.description,
     required this.attributesValues,
@@ -66,8 +66,8 @@ class ProductVariationModel {
       id: map['id'] ?? '',
       sku: map['sku'] ?? '',
       stock: map['stock'] ?? 0,
-      price: double.parse(map['price'] ?? 0.0),
-      salePrice: double.parse(map['salePrice']),
+      price: (map['price'] as num?)?.toDouble() ?? 0.0,
+      salePrice: (map['salePrice'] as num?)?.toDouble(),
       image: map['image'] ?? '',
       description: map['description'] ?? '',
       attributesValues: Map<String, dynamic>.from(

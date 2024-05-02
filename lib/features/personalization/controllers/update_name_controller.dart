@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_flutter/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_flutter/features/personalization/controllers/user_controller.dart';
 import 'package:ecommerce_flutter/features/personalization/screens/profile/profile_screen.dart';
@@ -55,7 +53,6 @@ class UpdateNameController extends GetxController {
         Get.to(() => const ProfileScreen());
       } catch (e) {
         TFullScreenLoader.removeLoader();
-        log(e.toString());
         TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
       }
     }

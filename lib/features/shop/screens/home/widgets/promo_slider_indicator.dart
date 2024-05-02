@@ -12,28 +12,24 @@ class TSliderIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bannercontroller = BannerController.instance;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: List<Widget>.generate(
-          bannercontroller.allBanners.length,
-          (index) => GestureDetector(
-                onTap: () => bannercontroller.onDotClick(index),
-                child: Obx(
-                  () => TRoundedContainer(
-                    height:
-                        bannercontroller.currentIndex.value == index ? 4 : 3,
-                    width:
-                        bannercontroller.currentIndex.value == index ? 20 : 10,
-                    radius: 10,
-                    backgroundColor:
-                        bannercontroller.currentIndex.value == index
-                            ? TColors.primary
-                            : TColors.grey,
-                    margin: const EdgeInsets.only(left: 5),
-                  ),
-                ),
-              )),
-    );
+    return Obx(() => Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List<Widget>.generate(
+            bannercontroller.allBanners.length,
+            (index) => GestureDetector(
+              onTap: () => bannercontroller.onDotClick(index),
+              child: TRoundedContainer(
+                height: bannercontroller.currentIndex.value == index ? 4 : 3,
+                width: bannercontroller.currentIndex.value == index ? 20 : 10,
+                radius: 10,
+                backgroundColor: bannercontroller.currentIndex.value == index
+                    ? TColors.primary
+                    : TColors.grey,
+                margin: const EdgeInsets.only(left: 5),
+              ),
+            ),
+          ),
+        ));
   }
 }

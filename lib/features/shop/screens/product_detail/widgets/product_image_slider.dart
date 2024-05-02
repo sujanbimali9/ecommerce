@@ -6,7 +6,6 @@ import 'package:ecommerce_flutter/common/widgets/image/rounded_image.dart';
 import 'package:ecommerce_flutter/features/shop/controllers/product/imagecontroller.dart';
 import 'package:ecommerce_flutter/features/shop/models/product_model.dart';
 import 'package:ecommerce_flutter/utils/constants/colors.dart';
-import 'package:ecommerce_flutter/utils/constants/image_strings.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
 import 'package:ecommerce_flutter/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';

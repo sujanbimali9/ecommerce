@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_flutter/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_flutter/features/authentication/models/user_model.dart';
@@ -64,7 +62,6 @@ class SignUpController extends GetxController {
           title: 'error occured',
           message: e.toString(),
         );
-        log(e.toString());
       }
     }
   }

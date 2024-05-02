@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_flutter/features/shop/models/product_model.dart';
 import 'package:ecommerce_flutter/utils/constants/enums.dart';
@@ -23,6 +25,7 @@ class ImageController extends GetxController {
         product.productVariations!.isNotEmpty) {
       images.addAll(product.productVariations!.map((e) => e.image));
     }
+    log(images.toList().toString());
     return images.toList();
   }
 

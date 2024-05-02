@@ -10,6 +10,7 @@ class BannerController extends GetxController {
   CarouselController carouselController = CarouselController();
   final _bannerRepository = Get.put(BannerRepository());
   final RxList<BannerModel> allBanners = <BannerModel>[].obs;
+
   @override
   void onInit() {
     fetchBanner();

@@ -1,6 +1,7 @@
 import 'package:ecommerce_flutter/features/shop/models/brand_model.dart';
 import 'package:ecommerce_flutter/features/shop/models/product_attribute_model.dart';
 import 'package:ecommerce_flutter/features/shop/models/product_varitaiton_model.dart';
+import 'package:firebase_cloud_firestore/firebase_cloud_firestore.dart';
 
 class ProductModel {
   String id;
@@ -112,15 +113,15 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> map) {
     return ProductModel(
-      id: map['id'],
+      id: map['id'] as String,
       stock: map['stock'] ?? 0,
       sku: map['sku'],
-      price: double.parse(map['price'] ?? 0.0),
+      price: (map['price'] as num?)?.toDouble() ?? 0.0,
       title: map['title'],
       date: map['date'] != null
           ? DateTime.fromMillisecondsSinceEpoch(map['date'] as int)
           : null,
-      salePrice: double.parse(map['salePrice'] ?? 0.0),
+      salePrice: (map['salePrice'] as num?)?.toDouble() ?? 0.0,
       thumbnail: map['thumbnail'] ?? '',
       description: map['description'] ?? '',
       isFeatured: map['isFeatured'] ?? false,
@@ -133,8 +134,8 @@ class ProductModel {
               .map((e) => ProductAttributeModel.fromJson(e))
               .toList()
           : [],
-      productVariations: map['varitation'] != null
-          ? (map['variation'] as List<dynamic>)
+      productVariations: map['variations'] != null
+          ? (map['variations'] as List<dynamic>)
               .map((e) => ProductVariationModel.fromJson(e))
               .toList()
           : [],

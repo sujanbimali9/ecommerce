@@ -55,6 +55,7 @@ class TRoundedImage extends StatelessWidget {
                       TShimmerEffect(
                         height: height ?? 46,
                         width: width ?? 46,
+                        radius: borderRadius,
                       ))
               : Image(
                   image: AssetImage(image) as ImageProvider,

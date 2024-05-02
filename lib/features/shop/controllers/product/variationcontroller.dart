@@ -12,7 +12,7 @@ class VariationController extends GetxController {
 
   String getProductStockStatus() {
     return variationStockStatus.value =
-        selectedVariation.value.stock > 0 ? 'Out of Stock' : 'In Stock';
+        selectedVariation.value.stock > 0 ? 'In Stock' : 'Out of Stock';
   }
 
   void onAttributeSelected(
@@ -51,7 +51,8 @@ class VariationController extends GetxController {
     return availableVariationAttributeValues.cast<String?>();
   }
 
-  String get variationPrice => selectedVariation.value.salePrice > 0
+  String get variationPrice => selectedVariation.value.salePrice != null &&
+          selectedVariation.value.salePrice! > 0
       ? selectedVariation.value.salePrice.toString()
       : selectedVariation.value.price.toString();
 

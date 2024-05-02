@@ -19,7 +19,9 @@ class TVerticalProductShimmerEffect extends StatelessWidget {
                 SizedBox(height: TSizes.spaceBtwItems),
                 TShimmerEffect(height: 15, width: 160, radius: 10),
                 SizedBox(height: TSizes.spaceBtwItems / 2),
-                TShimmerEffect(height: 15, width: 110, radius: 10)
+                TShimmerEffect(height: 15, width: 110, radius: 10),
+                SizedBox(height: TSizes.spaceBtwItems / 2),
+                TShimmerEffect(height: 15, width: 80, radius: 10),
               ],
             )),
         itemCount: itemCount);

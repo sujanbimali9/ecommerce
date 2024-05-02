@@ -13,7 +13,7 @@ class TRoutes {
   static const brand = '/brand';
   static const allProducts = '/allProducts';
   static const userProfile = '/userProfile';
-  static const userAddress = 'userAddress';
+  static const userAddress = '/userAddress';
   static const signUp = '/signUp';
   static const signUpSuccess = '/signUpSuccess';
   static const verifyEmail = '/verifyEmail';

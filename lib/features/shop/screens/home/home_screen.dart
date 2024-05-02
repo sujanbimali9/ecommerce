@@ -7,7 +7,6 @@ import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ecommerce_flutter/common/widgets/search_bar/search_container.dart';
-import 'package:ecommerce_flutter/features/shop/controllers/homecontroller.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_category.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_promo_slider.dart';
@@ -19,7 +18,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeController());
     final productController = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
@@ -40,6 +38,9 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(
+                          height: TSizes.spaceBtwItems / 2,
+                        ),
                         const TSectionHeading(
                           title: 'Popular Categories',
                           showButton: false,
@@ -63,14 +64,18 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const TPromoSlider(),
                   const SizedBox(height: TSizes.spaceBtwSections),
-                  Obx(() => productController.isLoading.value
-                      ? const TVerticalProductShimmerEffect()
-                      : TGridLayout(
-                          itemCount: productController.featuredProducts.length,
-                          itemBuilder: (context, index) => TVerticalProductCard(
-                              product:
-                                  productController.featuredProducts[index]),
-                        )),
+                  Obx(
+                    () => productController.isLoading.value
+                        ? const TVerticalProductShimmerEffect()
+                        : TGridLayout(
+                            itemCount:
+                                productController.featuredProducts.length,
+                            itemBuilder: (context, index) =>
+                                TVerticalProductCard(
+                                    product: productController
+                                        .featuredProducts[index]),
+                          ),
+                  ),
                 ],
               ),
             )

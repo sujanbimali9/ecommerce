@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_flutter/common/style/box_shadow.dart';
 import 'package:ecommerce_flutter/common/widgets/image_text_widget/brand_title_text_with_verifyicon.dart';
 import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_cart_button.dart';
@@ -33,6 +35,7 @@ class TVerticalProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     final productController = ProductController.instance;
+    log(productController.getProductPrice(product));
     return GestureDetector(
       onTap: () => Get.to(() => ProductDetailScreen(product: product)),
       child: Container(
@@ -66,23 +69,25 @@ class TVerticalProductCard extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems / 3),
                   TBrandTitleTextWithVerifyIcon(
                       text: product.brand!.name, isverified: true),
-                  Flexible(
-                    child: Column(
-                      children: [
-                        if (product.productType ==
-                                ProductType.single.toString() &&
-                            product.salePrice > 0)
-                          Text(product.price.toString(),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style:
-                                  Theme.of(context).textTheme.headlineMedium),
-                        Text(productController.getProductPrice(product),
+                  Column(
+                    children: [
+                      if (product.productType ==
+                              ProductType.single.toString() &&
+                          product.salePrice > 0)
+                        Text('\$${product.price}',
                             overflow: TextOverflow.ellipsis,
                             maxLines: 1,
-                            style: Theme.of(context).textTheme.headlineMedium),
-                      ],
-                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge
+                                ?.copyWith(
+                                    color: TColors.darkerGrey,
+                                    decoration: TextDecoration.lineThrough)),
+                      Text(productController.getProductPrice(product),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: Theme.of(context).textTheme.titleLarge),
+                    ],
                   ),
                 ],
               ),

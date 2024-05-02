@@ -20,7 +20,7 @@ class TCategoryShimmerEffect extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => const Column(
                 children: [
-                  TShimmerEffect(height: 56, width: 56, radius: 28),
+                  TShimmerEffect(height: 56, width: 56, radius: 56),
                   SizedBox(height: TSizes.spaceBtwItems / 2),
                   TShimmerEffect(height: 8, width: 56)
                 ],

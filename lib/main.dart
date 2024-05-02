@@ -10,6 +10,10 @@ Future<void> main() async {
       WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await GetStorage.init();
+  // final dummydata = Get.put(FirebaseStorageService());
+  // await dummydata.uploadProducts(DummyData.products);
+  // await dummydata.uploadBanner(DummyData.banners);
+  // await dummydata.uploadCategory(DummyData.categories);
 
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());

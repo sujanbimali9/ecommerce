@@ -22,8 +22,10 @@ class CategoryController extends GetxController {
       isLoading.value = true;
       final categories = await _categoryRepositoy.getAllCategory();
       allCategories.assignAll(categories);
-      featuredCategories.assignAll(categories.where(
-          (category) => category.isFeatured && category.parentId.isNotEmpty));
+      featuredCategories.assignAll(categories.where((category) =>
+          category.isFeatured &&
+          category.parentId != null &&
+          category.parentId!.isEmpty));
     } catch (e) {
       TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
     } finally {

@@ -15,7 +15,6 @@ import 'package:ecommerce_flutter/features/shop/screens/checkout/checkout_screen
 import 'package:ecommerce_flutter/features/shop/screens/favourite/wishlist_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/home_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/myorders/my_order_screen.dart';
-import 'package:ecommerce_flutter/features/shop/screens/product_detail/product_detail_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/review/review_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/shop/shop_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category.dart';

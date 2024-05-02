@@ -23,7 +23,6 @@ class ProductDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-
     return Scaffold(
       bottomNavigationBar: const TBottomBuyAndAddToCart(),
       body: SingleChildScrollView(

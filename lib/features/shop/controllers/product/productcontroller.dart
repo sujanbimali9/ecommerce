@@ -26,22 +26,23 @@ class ProductController extends GetxController {
       isLoading.value = false;
     } catch (e) {
       isLoading.value = false;
-
       TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
     }
   }
 
   String getProductPrice(ProductModel product) {
-    double smallestPrice = 0;
+    double smallestPrice = double.infinity;
     double largestPrice = 0;
     if (product.productType == ProductType.single.toString()) {
       return product.salePrice > 0
-          ? product.salePrice.toString()
-          : product.price.toString();
+          ? '\$${product.salePrice}'
+          : '\$${product.price}';
     } else {
       for (ProductVariationModel variation in product.productVariations!) {
         double priceToConsider =
-            variation.salePrice > 0 ? variation.salePrice : variation.price;
+            variation.salePrice != null && variation.salePrice! > 0
+                ? variation.salePrice!
+                : variation.price;
 
         if (priceToConsider < smallestPrice) {
           smallestPrice = priceToConsider;
@@ -51,16 +52,15 @@ class ProductController extends GetxController {
         }
       }
       if (smallestPrice.isEqual(largestPrice)) {
-        return largestPrice.toString();
+        return '\$$largestPrice}';
       } else {
-        return '$smallestPrice - $largestPrice';
+        return '\$$smallestPrice - \$$largestPrice';
       }
     }
   }
 
   String? salePercentage(double originalPrice, double? salePrice) {
-    if (salePrice != null || salePrice! <= 0.0) return null;
-
+    if (salePrice == null || salePrice <= 0.0) return '0';
     if (originalPrice <= 0) return null;
     return (((originalPrice - salePrice) / originalPrice) * 100)
         .toStringAsFixed(0);

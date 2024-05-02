@@ -1,6 +1,4 @@
-import 'dart:developer';
 import 'dart:io';
-
 import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_flutter/features/authentication/models/user_model.dart';
 import 'package:ecommerce_flutter/utils/exceptions/firebase_auth_exceptions.dart';
@@ -120,7 +118,6 @@ class UserRepository extends GetxController {
       final ref = storage.ref(firebasePath).child(image.name);
       await ref.putFile(File(image.path));
       final url = await ref.getDownloadURL();
-      log(url);
       return url;
     } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;

@@ -51,6 +51,7 @@ class TProductImage extends StatelessWidget {
         children: [
           TRoundedImage(
             boxFit: boxFit,
+            height: height,
             image: image,
             width: double.infinity,
             isNetworkImage: isNetworkImage ?? false,
@@ -65,7 +66,7 @@ class TProductImage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                     horizontal: TSizes.sm, vertical: TSizes.xs),
                 child: Text(
-                  discoutPercentage!,
+                  '$discoutPercentage%',
                   style: Theme.of(context)
                       .textTheme
                       .labelLarge!
@@ -77,6 +78,8 @@ class TProductImage extends StatelessWidget {
             right: 5,
             top: 5,
             child: TAddToFavouriteButton(
+              height: 40,
+              width: 40,
               onIconPressed: onIconPressed,
               backroundColor: iconBackgroundColor,
             ),

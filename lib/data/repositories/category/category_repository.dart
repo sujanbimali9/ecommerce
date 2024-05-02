@@ -13,7 +13,7 @@ class CategoryRepository extends GetxController {
 
   Future<List<CategoryModel>> getAllCategory() async {
     try {
-      final res = await _db.collection('categories').get();
+      final res = await _db.collection('Categories').get();
       final list = res.docs
           .map((category) => CategoryModel.fromJson(category.data()))
           .toList();

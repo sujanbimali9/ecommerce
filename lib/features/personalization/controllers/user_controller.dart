@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_flutter/data/repositories/authentication/authentication_repository.dart';
 import 'package:ecommerce_flutter/data/repositories/user/user_repository.dart';
 import 'package:ecommerce_flutter/features/authentication/models/user_model.dart';
@@ -102,7 +100,6 @@ class UserController extends GetxController {
     try {
       if (userCredential != null &&
           !(await userRepository.userExits(userCredential.user?.uid ?? ''))) {
-        log('new user');
         final user = userCredential.user;
         final nameparts = UserModel.nameparts(user?.displayName ?? '');
         final UserModel userModel = UserModel(
@@ -114,7 +111,6 @@ class UserController extends GetxController {
                 nameparts.length > 1 ? nameparts.sublist(1).join(' ') : '',
             phoneNo: user?.phoneNumber ?? '',
             profilePicture: user?.photoURL ?? '');
-        log('save user data');
         await userRepository.saveNewUser(userModel);
       }
     } catch (e) {

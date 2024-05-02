@@ -12,7 +12,7 @@ class BannerRepository extends GetxController {
 
   Future<List<BannerModel>> getAllBanner() async {
     try {
-      final res = await _db.collection('banners').get();
+      final res = await _db.collection('Banners').get();
       final list = res.docs
           .map((category) => BannerModel.fromJson(category.data()))
           .toList();

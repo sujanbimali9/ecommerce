@@ -20,7 +20,7 @@ class THomeCategories extends StatelessWidget {
         return const TCategoryShimmerEffect();
       } else {
         return SizedBox(
-          height: 130,
+          height: 120,
           child: ListView.builder(
             itemCount: controller.featuredCategories.length,
             shrinkWrap: true,

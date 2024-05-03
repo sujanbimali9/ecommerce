@@ -3,6 +3,7 @@ import 'package:ecommerce_flutter/common/widgets/products/card/vertical_product_
 import 'package:ecommerce_flutter/common/widgets/shimmer_effect/vertical_product_shimmer.dart';
 import 'package:ecommerce_flutter/common/widgets/texts/section_heading.dart';
 import 'package:ecommerce_flutter/features/shop/controllers/product/productcontroller.dart';
+import 'package:ecommerce_flutter/features/shop/screens/allproduct/all_product_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/subcategory/sub_category.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,6 +13,7 @@ import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_catego
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/home_promo_slider.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/widgets/primary_header.dart';
 import 'package:ecommerce_flutter/utils/constants/sizes.dart';
+import 'package:get/get_core/get_core.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -64,6 +66,18 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const TPromoSlider(),
                   const SizedBox(height: TSizes.spaceBtwSections),
+                  TSectionHeading(
+                    title: 'Popular Products',
+                    showButton: true,
+                    onPressed: () => Get.to(
+                      () => AllProductScreen(
+                        title: 'Popular Product',
+                        future: productController.fetchProductByFilter(
+                            filterParameter: 'isFeatured', filterValue: true),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
                   Obx(
                     () => productController.isLoading.value
                         ? const TVerticalProductShimmerEffect()

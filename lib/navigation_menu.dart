@@ -1,5 +1,7 @@
 import 'package:ecommerce_flutter/features/personalization/screens/setting_screen/setting_screen.dart';
+import 'package:ecommerce_flutter/features/shop/screens/favourite/wishlist_screen.dart';
 import 'package:ecommerce_flutter/features/shop/screens/home/home_screen.dart';
+import 'package:ecommerce_flutter/features/shop/screens/shop/shop_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';

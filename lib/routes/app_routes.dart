@@ -36,7 +36,11 @@ class AppRoutes {
     GetPage(name: TRoutes.checkout, page: () => const CheckoutScreen()),
     GetPage(name: TRoutes.cart, page: () => const CartScreen()),
     GetPage(name: TRoutes.brand, page: () => const AllBrandScreen()),
-    GetPage(name: TRoutes.allProducts, page: () => const AllProductScreen()),
+    GetPage(
+        name: TRoutes.allProducts,
+        page: () => const AllProductScreen(
+              title: 'electronics',
+            )),
     GetPage(name: TRoutes.userProfile, page: () => const ProfileScreen()),
     GetPage(name: TRoutes.userAddress, page: () => const UserAddressScreen()),
     GetPage(name: TRoutes.signUp, page: () => const SignUpScreen()),

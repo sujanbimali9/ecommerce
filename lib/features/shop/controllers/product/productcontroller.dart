@@ -30,6 +30,19 @@ class ProductController extends GetxController {
     }
   }
 
+  Future<List<ProductModel>> fetchProductByFilter(
+      {required String filterParameter,
+      required dynamic filterValue,
+      int? limit}) async {
+    try {
+      return _productRepositoy.getProductByFilter(
+          filterParameter, filterValue, limit);
+    } catch (e) {
+      TLoaders.errorSnackBar(title: 'error occured', message: e.toString());
+      return [];
+    }
+  }
+
   String getProductPrice(ProductModel product) {
     double smallestPrice = double.infinity;
     double largestPrice = 0;

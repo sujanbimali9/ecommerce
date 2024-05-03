@@ -25,20 +25,20 @@ class WishlistScreen extends StatelessWidget {
           )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(TSizes.iconXs),
-          child: Column(
-            children: [
-              TGridLayout(
-                  itemBuilder: (context, index) => TVerticalProductCard(
-                        product: ProductModel.empty,
-                      ),
-                  itemCount: 20),
-            ],
-          ),
-        ),
-      ),
+      // body: SingleChildScrollView(
+      //   child: Padding(
+      //     padding: const EdgeInsets.all(TSizes.iconXs),
+      //     child: Column(
+      //       children: [
+      //         TGridLayout(
+      //             itemBuilder: (context, index) => TVerticalProductCard(
+      //                   product: ProductModel.empty,
+      //                 ),
+      //             itemCount: 20),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

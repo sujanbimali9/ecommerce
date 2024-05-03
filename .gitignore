@@ -47,3 +47,4 @@ app.*.map.json
 /ios/Runner/GoogleService-Info.plist
 /ios/Runner/GoogleService-Info-Dev.plist
 /lib/firebase_options.dart
+/lib/data/repositories/dummy/*

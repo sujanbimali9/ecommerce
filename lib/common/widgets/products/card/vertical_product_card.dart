@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:ecommerce_flutter/common/style/box_shadow.dart';
 import 'package:ecommerce_flutter/common/widgets/image_text_widget/brand_title_text_with_verifyicon.dart';
 import 'package:ecommerce_flutter/common/widgets/products/cart/add_to_cart_button.dart';
@@ -35,7 +33,6 @@ class TVerticalProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     final productController = ProductController.instance;
-    log(productController.getProductPrice(product));
     return GestureDetector(
       onTap: () => Get.to(() => ProductDetailScreen(product: product)),
       child: Container(
@@ -81,12 +78,19 @@ class TVerticalProductCard extends StatelessWidget {
                                 .textTheme
                                 .bodyLarge
                                 ?.copyWith(
-                                    color: TColors.darkerGrey,
-                                    decoration: TextDecoration.lineThrough)),
-                      Text(productController.getProductPrice(product),
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: Theme.of(context).textTheme.titleLarge),
+                                  color:
+                                      dark ? TColors.white : TColors.darkerGrey,
+                                  decoration: TextDecoration.lineThrough,
+                                )),
+                      Text(
+                        productController.getProductPrice(product),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
                     ],
                   ),
                 ],
